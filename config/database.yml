@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: affirmme_development
+  pool: 5
+  username: vswamy
+  password: 
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: affirmme_test
+  pool: 5
+  username: vswamy
+  password: 
