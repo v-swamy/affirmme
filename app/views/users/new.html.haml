@@ -3,16 +3,11 @@
   %hr
 .row.center-block
   .well
-    %form.sign_in
-      .form-group
-        %label Email Address
-        %input.form-control(type="email")
-      .form-group
-        %label Password
-        %input.form-control(type="password")
-      .form-group
-        %label Phone Number
-        %input.form-control(type="phone number")
-      .form-group
-        %input(type="submit" value="Register" class="btn btn-default")
+    = bootstrap_form_for(@user) do |f|
+      = f.alert_message "Please fix the errors below."
+      = f.text_field :name
+      = f.email_field :email
+      = f.phone_field :phone
+      = f.password_field :password
+      = f.submit "Register"
 
