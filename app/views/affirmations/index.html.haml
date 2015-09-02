@@ -20,4 +20,4 @@
       - @affirmations.each do |affirmation|
         %tr 
           %td.lead.text-center 
-            = link_to "#{affirmation.text}", affirmation
+            = link_to "#{affirmation.text}", edit_affirmation_path(affirmation)

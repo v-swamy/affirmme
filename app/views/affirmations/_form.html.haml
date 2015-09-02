@@ -1,0 +1,19 @@
+.row.index-header.text-center
+  %h1.text-info.text-center 
+    = @affirmation.new_record? ? "Add an affirmation" : "Edit your affirmation"
+  %hr
+.row.center-block
+  .well
+    = bootstrap_form_for @affirmation do |f|
+      = f.text_field :text, label: "Affirmation text"
+      - if @affirmation.new_record?
+        = f.submit "Submit"
+      - else
+        = f.submit "Update"
+        = link_to @affirmation, method: :delete, class: "btn btn-danger" do
+          Delete
+          %i.glyphicon.glyphicon-trash
+
+
+
+    
