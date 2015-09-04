@@ -27,6 +27,53 @@ describe AffirmationsController do
     end
   end
 
+  describe "POST create" do
+
+    let(:user) { Fabricate(:user) }
+
+    before { set_current_user(user) }
+    
+    it_behaves_like "requires sign in" do
+      let(:action) { post :create, 
+        affirmation: Fabricate.attributes_for(:affirmation) }
+    end
+
+    context "with valid inputs" do
+
+      before { post :create, 
+        affirmation: Fabricate.attributes_for(:affirmation) }
+
+      it "sets the user of the new affirmation to the current user" do
+        expect(Affirmation.first.user).to eq(user)
+      end
+
+      it "creates a new affirmation" do
+        expect(Affirmation.count).to eq(1)
+      end
+
+      it "sets the flash success method" do
+        expect(flash[:success]).to be_present
+      end
+
+      it "redirects to the affirmations path" do
+        expect(response).to redirect_to affirmations_path
+      end
+    end
+
+    context "with invalid inputs" do
+      
+      before { post :create, affirmation: { text: "" } }
+
+      it "does not create a new affirmation" do
+        expect(Affirmation.count).to eq(0)
+      end
+
+      it "renders the new template" do
+        expect(response).to render_template "new"
+      end
+    end
+  end  
+
   describe "GET edit" do
     
     let(:affirmation) { Fabricate(:affirmation) }
@@ -65,8 +112,8 @@ describe AffirmationsController do
     end
 
     it "assigns the @affirmation variable to the selected affirmation" do
-      set_current_user
-      post :update, id: affirmation.id
+      post :update, id: affirmation.id, 
+        affirmation: Fabricate.attributes_for(:affirmation)
       expect(assigns(:affirmation)).to eq(affirmation)
     end
 

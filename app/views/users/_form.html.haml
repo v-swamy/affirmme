@@ -1,0 +1,17 @@
+.row.index-header.text-center
+  %h1.text-info.text-center 
+    = @user.new_record? ? "Register" : "Edit your profile"
+  %hr
+.row.center-block
+  .well
+    = bootstrap_form_for(@user) do |f|
+      = f.alert_message "Please fix the errors below."
+      = f.text_field :name
+      = f.email_field :email
+      = f.phone_field :phone
+      = f.password_field :password
+      - if @user.new_record?
+        = f.submit "Register"
+      - else
+        = f.submit "Update profile"
+

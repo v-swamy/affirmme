@@ -43,4 +43,24 @@ describe SessionsController do
       end
     end
   end
+
+  describe "GET destroy" do
+
+    before do
+      set_current_user
+      get :destroy  
+    end
+
+    it "clears out the session for the user" do
+      expect(session[:user_id]).to be_nil
+    end
+
+    it "sets the flash warning message" do
+      expect(flash[:warning]).to be_present
+    end
+
+    it "redirects to the root path" do
+      expect(response).to redirect_to root_path
+    end
+  end
 end

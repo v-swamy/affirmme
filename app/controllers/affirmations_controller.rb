@@ -11,6 +11,17 @@ class AffirmationsController < ApplicationController
     @affirmation = Affirmation.new
   end
 
+  def create
+    @affirmation = Affirmation.new(affirmation_params)
+    @affirmation.user = current_user
+    if @affirmation.save
+      flash[:success] = "Your affirmation has been added!"
+      redirect_to affirmations_path
+    else
+      render 'new'
+    end
+  end
+
   def edit
     @affirmation = Affirmation.find(params[:id])
   end

@@ -16,6 +16,8 @@ gem 'bootstrap_form'
 gem 'bcrypt'
 gem 'unicorn'
 gem 'sidekiq'
+gem 'twilio-ruby'
+gem 'figaro'
 
 group :development do
   gem 'thin'

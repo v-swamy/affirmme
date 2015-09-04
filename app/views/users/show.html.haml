@@ -1,0 +1,18 @@
+.row.index-header.text-center
+  %h1.text-info.text-center 
+    = "Your profile"
+  %hr
+.row.center-block
+  .well
+    %dl
+      %dt Name
+      %dd= @user.name
+      %br
+      %dt Email
+      %dd= @user.email
+      %br
+      %dt Phone
+      %dd= @user.phone
+      %br
+    = link_to "Edit profile", edit_user_path(current_user), class: "btn btn-primary"
+
