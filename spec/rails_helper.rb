@@ -84,10 +84,14 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+
 end
 
 Capybara::Webkit.configure do |config|
   config.allow_url("js.stripe.com")
   config.allow_url("api.stripe.com")
 end
+
+
+
 
