@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ACf29ac1e80252788566afe13ee0684ab2:2ea5aa68b085df4a6e5cf44e4af92760@api.twilio.com/2010-04-01/Accounts/ACf29ac1e80252788566afe13ee0684ab2/Messages.json
+    body:
+      encoding: US-ASCII
+      string: From=%2B15005550006&To=%2B15005550001&Body=First+affirmation&StatusCallback=http%3A%2F%2Faffirmme.herokuapp.com%2Fstatus
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/4.3.0 (ruby/x86_64-darwin14.0 2.1.5-p273)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 400
+      message: BAD REQUEST
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 19 Sep 2015 12:31:22 GMT
+      Twilio-Request-Duration:
+      - '0.041'
+      Twilio-Request-Id:
+      - RQ80751591722d448b9725ad8bd36e62bd
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+      Content-Length:
+      - '159'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code": 21211, "message": "The ''To'' number +15005550001 is not a
+        valid phone number.", "more_info": "https://www.twilio.com/docs/errors/21211",
+        "status": 400}'
+    http_version: 
+  recorded_at: Sat, 19 Sep 2015 12:31:22 GMT
+recorded_with: VCR 2.9.3

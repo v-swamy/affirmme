@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ACf29ac1e80252788566afe13ee0684ab2:2ea5aa68b085df4a6e5cf44e4af92760@api.twilio.com/2010-04-01/Accounts/ACf29ac1e80252788566afe13ee0684ab2/Messages.json
+    body:
+      encoding: US-ASCII
+      string: From=%2B15005550006&To=%2B15005555555&Body=First+affirmation&StatusCallback=http%3A%2F%2Faffirmme.herokuapp.com%2Fstatus
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/4.3.0 (ruby/x86_64-darwin14.0 2.1.5-p273)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 19 Sep 2015 12:31:22 GMT
+      Strict-Transport-Security:
+      - max-age=15768000
+      Twilio-Request-Duration:
+      - '0.048'
+      Twilio-Request-Id:
+      - RQa52843e3a41e434197fd235fce74534b
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+      Content-Length:
+      - '707'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"sid": "SMee77cedd9fe446fc9987f1f621e9d052", "date_created": "Sat,
+        19 Sep 2015 12:31:22 +0000", "date_updated": "Sat, 19 Sep 2015 12:31:22 +0000",
+        "date_sent": null, "account_sid": "ACf29ac1e80252788566afe13ee0684ab2", "to":
+        "+15005555555", "from": "+15005550006", "body": "First affirmation", "status":
+        "queued", "num_segments": "1", "num_media": "0", "direction": "outbound-api",
+        "api_version": "2010-04-01", "price": null, "price_unit": "USD", "uri": "/2010-04-01/Accounts/ACf29ac1e80252788566afe13ee0684ab2/Messages/SMee77cedd9fe446fc9987f1f621e9d052.json",
+        "subresource_uris": {"media": "/2010-04-01/Accounts/ACf29ac1e80252788566afe13ee0684ab2/Messages/SMee77cedd9fe446fc9987f1f621e9d052/Media.json"}}'
+    http_version: 
+  recorded_at: Sat, 19 Sep 2015 12:31:22 GMT
+recorded_with: VCR 2.9.3
