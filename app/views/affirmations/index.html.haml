@@ -9,7 +9,7 @@
   = link_to new_affirmation_path, class: "btn btn-primary text-center" do
     %i.glyphicon.glyphicon-plus
     Add an affirmation
-  %a.btn.btn-info 
+  = link_to start_path, class: "btn btn-info", method: :post do
     %i.glyphicon.glyphicon-play-circle
     Start
   %p
