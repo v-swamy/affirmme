@@ -11,7 +11,7 @@ module TwilioWrapper
       begin 
         message = client.account.messages.create({
           from: ENV["TWILIO_NUMBER"],
-          to: user.phone,
+          to: "+1#{user.phone}",
           body: user.affirmations.first.text,
           status_callback: url + '/status'
         })

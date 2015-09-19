@@ -36,11 +36,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 18 Sep 2015 15:50:02 GMT
+      - Sat, 19 Sep 2015 12:31:21 GMT
       Twilio-Request-Duration:
-      - '0.066'
+      - '0.039'
       Twilio-Request-Id:
-      - RQae394fd18c394910960aa27b2b729954
+      - RQ15fd8b8c0b57488f9f3379e0880eb20d
       X-Powered-By:
       - AT-5000
       X-Shenanigans:
@@ -55,5 +55,5 @@ http_interactions:
         valid phone number.", "more_info": "https://www.twilio.com/docs/errors/21211",
         "status": 400}'
     http_version: 
-  recorded_at: Fri, 18 Sep 2015 15:50:02 GMT
+  recorded_at: Sat, 19 Sep 2015 12:31:21 GMT
 recorded_with: VCR 2.9.3
