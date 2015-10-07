@@ -13,7 +13,7 @@ module TwilioWrapper
           from: ENV["TWILIO_NUMBER"],
           to: "+1#{user.phone}",
           body: user.affirmations.find_by(id: user.next_affirmation_id).text,
-          status_callback: 'http://debbd9d2.ngrok.io/status'
+          status_callback: callback_url + '/status'
         })
         new(message: message)
       rescue Twilio::REST::RequestError => e
