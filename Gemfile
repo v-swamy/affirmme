@@ -18,6 +18,7 @@ gem 'unicorn'
 gem 'sidekiq'
 gem 'twilio-ruby'
 gem 'figaro'
+gem 'sinatra', :require => nil
 
 group :development do
   gem 'thin'

@@ -7,6 +7,7 @@ describe TwilioWrapper do
         user = Fabricate(:user, phone: "5005555555")
         affirmation = Fabricate(:affirmation, text: "First affirmation", 
           user: user)
+        user.set_next_affirmation_id
         url = "http://affirmme.herokuapp.com"
         message = TwilioWrapper::Messages.create(user, url)
         expect(message).to be_successful
@@ -16,6 +17,7 @@ describe TwilioWrapper do
         user = Fabricate(:user, phone: "5005550001")
         affirmation = Fabricate(:affirmation, text: "First affirmation", 
           user: user)
+        user.set_next_affirmation_id
         url = "http://affirmme.herokuapp.com"
         message = TwilioWrapper::Messages.create(user, url)
         expect(message).not_to be_successful
@@ -25,6 +27,7 @@ describe TwilioWrapper do
         user = Fabricate(:user, phone: "5005550001")
         affirmation = Fabricate(:affirmation, text: "First affirmation", 
           user: user)
+        user.set_next_affirmation_id
         url = "http://affirmme.herokuapp.com"
         message = TwilioWrapper::Messages.create(user, url)
         expect(message.error_message).to eq("The 'To' number +15005550001 is not a valid phone number.")
