@@ -1,7 +1,10 @@
 class TwilioWorker
   include Sidekiq::Worker
-  def perform(user_id)
-    user = User.find_by(user_id: user_id)
-    message = TwilioWrapper::Messages.create(user)
+  sidekiq_options :retry => false
+
+  def perform(user_id, callback_url)
+    user = User.find_by(id: user_id)
+    url = callback_url
+    message = TwilioWrapper::Messages.create(user, url)
   end
 end

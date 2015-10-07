@@ -9,8 +9,6 @@ require 'capybara/rails'
 require 'capybara/email/rspec'
 require 'sidekiq/testing'
 
-Sidekiq::Testing.inline!
-
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -83,6 +81,10 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
+  end
+
+  config.before(:each) do
+    Sidekiq::Worker.clear_all
   end
 
 end
