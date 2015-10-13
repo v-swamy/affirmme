@@ -5,6 +5,7 @@
 .row.center-block
   .well
     = bootstrap_form_for @affirmation do |f|
+      = f.alert_message "Please fix the errors below."
       = f.text_field :text, label: "Affirmation text"
       - if @affirmation.new_record?
         = f.submit "Submit"
